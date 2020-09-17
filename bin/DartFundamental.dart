@@ -184,6 +184,26 @@ void main(List<String> arguments) {
 }
   */
 
+  /*
+  * Collection
+  */
+  List<int> numberList = [1, 2, 3, 4, 5]; // integer list
+  var stringList = ['Hello', 'Samuel', 'Dart']; // List<String>
+  List dynamicList = [1, 'Dicoding', true]; // List<dynamic>
+  print(dynamicList[1]);
+  stringList.forEach((s) => print(s));
+  dynamicList.forEach((element) {
+    print(element);
+  });
+  stringList.add('Flutter'); // add to last index
+  stringList.insert(0, 'Programming'); // add to first index
+
+  stringList.remove('Programming'); // Delete with keyword 'programming'
+  stringList.removeAt(1);           // Remove at index 1
+  stringList.removeLast();          // Remove last index
+  stringList.removeRange(0, 2);     // Remove start from 0 to 1 (index 2 not removed)
+
+
 
 
 }
