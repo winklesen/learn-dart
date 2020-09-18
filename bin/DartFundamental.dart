@@ -10,6 +10,9 @@ import 'package:DartFundamental/Status.dart';
 * =================================
 */
 
+/// code convention
+/// https://dart.dev/guides/language/effective-dart
+
 // Single line comment
 /*
   multi
