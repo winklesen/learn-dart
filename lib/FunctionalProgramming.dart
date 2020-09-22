@@ -75,5 +75,7 @@ class FunctionalProgramming {
     var closureExample = calculate(2);
     closureExample(); // value is 3
     closureExample(); // value is 4
+    // As long as the function still one context.
+
   }
 }

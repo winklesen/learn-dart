@@ -1,3 +1,4 @@
+/// import required package here
 import 'dart:io';
 import 'package:DartFundamental/Bird.dart';
 import 'package:DartFundamental/Cat.dart';
@@ -10,8 +11,8 @@ import 'package:DartFundamental/Status.dart';
 * =================================
 */
 
-/// code convention
-/// https://dart.dev/guides/language/effective-dart
+/// code convention guide
+// https://dart.dev/guides/language/effective-dart
 
 // Single line comment
 /*
@@ -25,10 +26,8 @@ import 'package:DartFundamental/Status.dart';
     example : [main]
  */
 
-// Dart main function.
+/// Dart main function.
 void main(List<String> arguments) {
-  // print('Hello world: ${DartFundamental.calculate()}!');
-
   // Show output on console
   var greetings = 'Hello Dart!';
   print(greetings);
@@ -39,12 +38,13 @@ void main(List<String> arguments) {
   var nickname = stdin.readLineSync();
   stdout.write('Your Age :');
   int age = int.parse(stdin.readLineSync());
-  stdout.write( "Hi $name or should i call you $nickname."); // Print creates new line
+  stdout.write(
+      "Hi $name or should i call you $nickname."); // Print creates new line
   print("You're still $age years old."); // stdout.write not creates new line
 
   /// Data Type
   // Variabel
-  String word = 'Kata '; // text
+  String word = 'Text '; // text
   int integer = 123; // integers
   double decimal = 3.14; // decimal
   num number = -3484; // integers and decimal numbers
@@ -83,7 +83,7 @@ void main(List<String> arguments) {
   var notTrue = !true;
   bool notFalse = !false;
 
-  // Operator
+  /// Operator
   print(5 + 2); // int add = 7
   print(5 - 2); // int subtract = 3
   print(5 * 2); // int multiply = 10
@@ -105,7 +105,7 @@ void main(List<String> arguments) {
   print(b); // output = 4
   print(c);
 
-  // Exceptions
+  /// Exceptions
   try {
     var a = 7;
     var b = 0;
@@ -121,35 +121,40 @@ void main(List<String> arguments) {
     print('This line still executed');
   }
 
-  // Function
-  /*
+  /// Function
+  /* usage :
     returnType functionName(type param1, type param2, ...) {
       return result;
     }
   */
-  calculateCelcius();
+  calculateCelcius(); // call it
   greetNewUser('Samuel', null, true); // with positioning
   greetNewUserAgain(
       name: 'Samuel', age: 18, isVerified: true); // with param name
   greetNewUserAgainAndAgain(); // its still okay
 
-  // const variabel
+  /// const variabel
   const foo = 'barr'; // compile-time constants,
   final firstName = stdin.readLineSync(); // runtime constants
-  //  fistName = 'Dart'; cant change value
+  // firstName = 'Dart'; cant change value
   print('Hello $firstName');
 
   /// Control Flow
   // if and else
-  if(true) {
+  if (true) {
     // do something
-  }else{
+  } else {
     // do something
   }
-  var shopStatus = true == false ? "Hello, we're open" : "Sorry, we've closed"; // conditional expression
+
+  // Simplified
+  var shopStatus = true == false
+      ? "Hello, we're open"
+      : "Sorry, we've closed"; // conditional expression
   var buyer = name ?? 'user'; // if 'name' null =>. user
 
   // Loop
+  // For
   for (int i = 1; i <= 100; i++) {
     print(i);
   }
@@ -167,6 +172,7 @@ void main(List<String> arguments) {
     i++;
   } while (i <= 100);
 
+  // Break/Continue
   void breakContinue() {
     for (int i = 1; i <= 10; i++) {
       if (i % 3 == 0) {
@@ -177,25 +183,23 @@ void main(List<String> arguments) {
     }
   }
 
-  /*
+  // Switch case
+  /* usage
   switch (variable/expression) {
-  case value1:
-    // do something
-    break;
-  case value2:
-    // do something
-    break;
-  ...
-  ...
-  default:
-    // do something else
-}
+    case value1:
+      // do something
+      break;
+    case value2:
+      // do something
+      break;
+    ...
+    ...
+    default:
+      // do something else
+  }
   */
 
-  /*
-  * Collection
-  */
-
+  /// Collection
   // List
   List<int> numberList = [1, 2, 3, 4, 5]; // integer list
   var stringList = ['Hello', 'Samuel', 'Dart']; // List<String>
@@ -209,14 +213,15 @@ void main(List<String> arguments) {
   stringList.insert(0, 'Programming'); // add to first index
 
   stringList.remove('Programming'); // Delete with keyword 'programming'
-  stringList.removeAt(1);           // Remove at index 1
-  stringList.removeLast();          // Remove last index
-  stringList.removeRange(0, 2);     // Remove start from 0 to 1 (index 2 not removed)
+  stringList.removeAt(1); // Remove at index 1
+  stringList.removeLast(); // Remove last index
+  stringList.removeRange(
+      0, 2); // Remove start from 0 to 1 (index 2 not removed)
 
   // Set
   // a collection with no duplicate
   var numberSet = {1, 4, 6};
-  Set<int> anotherSet = new Set.from([1, 4, 6, 4, 1]);
+  Set<int> anotherSet = {1, 4, 6, 4, 1};
   print(anotherSet); // Output: {1, 4, 6}
   numberSet.add(6);
   numberSet.addAll({2, 2, 3});
@@ -236,16 +241,11 @@ void main(List<String> arguments) {
 
   // Map
   // key-value collection
-  var capital = {
-    'Jakarta': 'Indonesia',
-    'London': 'England',
-    'Tokyo': 'Japan'
-  };
+  var capital = {'Jakarta': 'Indonesia', 'London': 'England', 'Tokyo': 'Japan'};
   print(capital['Jakarta']);
   print(capital.keys); // print all map key
   print(capital.values); // print all map values
   capital['New Delhi'] = 'India'; // add
-
 
   /// OOP
   // Class
@@ -263,10 +263,9 @@ void main(List<String> arguments) {
   // Enum
   print(Status.values);
   print(Status.Done);
-
 }
 
-// Function
+/// Function
 void calculateCelcius() {
   // void = just execute it
   stdout.write('Input a Fahrenheit: ');

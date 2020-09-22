@@ -10,6 +10,7 @@ abstract class Animal {
   Animal.Age(this._age);
   Animal.Weight(this._weight);
 
+  // Getter setter
   void eat() {
     print('$_name is eating.');
     _weight = _weight + 0.2;
