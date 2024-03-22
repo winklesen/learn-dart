@@ -1,4 +1,1 @@
-## :dart: Dart Fundamental
-
-A sample Dart command-line application with an entrypoint in `bin/`, library code
-in `lib/`, and example unit test in `test/`.
+A sample command-line application providing basic argument parsing with an entrypoint in `bin/`.
